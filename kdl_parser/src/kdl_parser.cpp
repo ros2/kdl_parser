@@ -191,14 +191,6 @@ bool treeFromString(const std::string & xml, KDL::Tree & tree)
   return treeFromUrdfModel(robot_model, tree);
 }
 
-bool treeFromXml(TiXmlDocument * xml_doc, KDL::Tree & tree)
-{
-  std::stringstream ss;
-  ss << *xml_doc;
-  return treeFromString(ss.str(), tree);
-}
-
-
 bool treeFromUrdfModel(const urdf::ModelInterface & robot_model, KDL::Tree & tree)
 {
   if (!robot_model.getRoot()) {

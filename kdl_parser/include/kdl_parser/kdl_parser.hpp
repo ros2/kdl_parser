@@ -38,7 +38,6 @@
 #define KDL_PARSER__KDL_PARSER_HPP_
 
 #include <string>
-#include <tinyxml.h>  // NOLINT
 
 #include "kdl/tree.hpp"
 #include "urdf_model/model.h"
@@ -71,15 +70,6 @@ bool treeFromParam(const std::string & param, KDL::Tree & tree);
  */
 KDL_PARSER_PUBLIC
 bool treeFromString(const std::string & xml, KDL::Tree & tree);
-
-/** Constructs a KDL tree from a TiXmlDocument
- * \param xml_doc The TiXmlDocument containting the xml description of the robot
- * \param tree The resulting KDL Tree
- * returns true on success, false on failure
- */
-[[deprecated("Use treeFromString instead")]]
-KDL_PARSER_PUBLIC
-bool treeFromXml(TiXmlDocument * xml_doc, KDL::Tree & tree);
 
 /** Constructs a KDL tree from a URDF robot model
  * \param robot_model The URDF robot model
